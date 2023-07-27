@@ -59,24 +59,6 @@ webhooks:
       operator: Exists
   sideEffects: None
 ---
-apiVersion: admissionregistration.k8s.io/v1
-kind: MutatingWebhookConfiguration
-metadata:
-  name: servicebindingprojections.webhook.bindings.labs.vmware.com
-  labels:
-    bindings.labs.vmware.com/release: devel
-webhooks:
-- admissionReviewVersions:
-  - v1
-  - v1beta1
-  clientConfig:
-    service:
-      name: webhook
-      namespace: service-bindings
-  failurePolicy: Fail
-  name: servicebindingprojections.webhook.bindings.labs.vmware.com
-  sideEffects: None
----
 apiVersion: v1
 kind: Secret
 metadata:

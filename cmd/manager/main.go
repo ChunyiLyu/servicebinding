@@ -32,7 +32,6 @@ import (
 	labsinternalv1alpha1 "github.com/vmware-tanzu/servicebinding/pkg/apis/labsinternal/v1alpha1"
 	servicebindingv1alpha3 "github.com/vmware-tanzu/servicebinding/pkg/apis/servicebinding/v1alpha3"
 	"github.com/vmware-tanzu/servicebinding/pkg/reconciler/provisionedservice"
-	"github.com/vmware-tanzu/servicebinding/pkg/reconciler/servicebinding"
 	"github.com/vmware-tanzu/servicebinding/pkg/reconciler/servicebindingprojection"
 )
 
@@ -171,7 +170,7 @@ func main() {
 
 		// Our reconcilers
 		provisionedservice.NewController,
-		servicebinding.NewController,
+		// servicebinding.NewController,
 		servicebindingprojection.NewController, NewBindingWebhook("servicebindingprojections", servicebindingprojection.ListAll, nil),
 	)
 }
